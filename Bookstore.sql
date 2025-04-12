@@ -40,3 +40,16 @@ CREATE TABLE country (
     country_id INT PRIMARY KEY AUTO_INCREMENT,
     country_name VARCHAR(100) UNIQUE
 );
+
+-- A table for knowing orders placed by a customer.
+CREATE TABLE cust_orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT NOT NULL,
+    order_date DATETIME NOT NULL,
+    shipping_method_id INT NOT NULL,
+    status_id INT NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+    FOREIGN KEY (status_id) REFERENCES order_status(status_id),
+    FOREIGN KEY (shipping_method_id) REFERENCES shipping_method(shipping_method_id) 
+);
