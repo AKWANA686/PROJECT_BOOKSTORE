@@ -76,3 +76,14 @@ CREATE TABLE order_line(
     FOREIGN KEY (order_id) REFERENCES cust_orders(order_id),
     FOREIGN KEY (book_id) REFERENCES book(book_id)
 );
+
+/**
+Shipping method table is created to store information about the shipping methods available for orders, including shipping method ID, name, cost, delivery days, and status.
+**/
+CREATE TABLE shipping_method(
+    shipping_method_id INT PRIMARY KEY AUTO_INCREMENT,
+    shipping_method_name VARCHAR(100) NOT NULL,
+    shipping_cost DECIMAL(10, 2) NOT NULL DEFAULT 0,
+    delivery_days TINYINT NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE
+);
