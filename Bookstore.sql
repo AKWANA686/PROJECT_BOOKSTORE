@@ -89,7 +89,9 @@ CREATE TABLE shipping_method(
 );
 
 /**
-The order history table is created to store information about the history of orders, including order history ID, order ID, status ID, and date.
+The order history table is created to store
+information about the history of orders,
+including order history ID, order ID, status ID, and date.
 **/
 CREATE TABLE order_history(
     history_id INT PRIMARY KEY AUTO_INCREMENT,
