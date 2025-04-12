@@ -104,3 +104,14 @@ CREATE TABLE order_history(
     FOREIGN KEY (order_id) REFERENCES cust_orders(order_id),
     FOREIGN KEY (status_id) REFERENCES order_status(status_id)
 );
+
+/**
+The order status table is
+created to store information
+about the status of orders,
+including status_ID and name.
+**/
+CREATE TABLE order_status(
+    status_id INT PRIMARY KEY AUTO_INCREMENT,
+    status_name VARCHAR(50) NOT NULL UNIQUE
+);
