@@ -42,6 +42,12 @@ CREATE TABLE country (
 );
 
 -- A table for knowing orders placed by a customer.
+/**
+The cust_orders table is created to store
+information about customer orders, including order ID,
+customer ID, order date, shipping method ID,
+status ID, and total amount.
+**/
 CREATE TABLE cust_orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     customer_id INT NOT NULL,
