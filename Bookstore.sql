@@ -87,3 +87,15 @@ CREATE TABLE shipping_method(
     delivery_days TINYINT NOT NULL,
     is_active BOOLEAN DEFAULT TRUE
 );
+
+/**
+The order history table is created to store information about the history of orders, including order history ID, order ID, status ID, and date.
+**/
+CREATE TABLE order_history(
+    history_id INT PRIMARY KEY AUTO_INCREMENT,
+    order_id INT NOT NULL,
+    status_id INT NOT NULL,
+    change_date DATETIME NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES cust_orders(order_id),
+    FOREIGN KEY (status_id) REFERENCES order_status(status_id)
+);
