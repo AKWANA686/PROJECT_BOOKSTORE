@@ -60,8 +60,12 @@ CREATE TABLE cust_orders (
     FOREIGN KEY (shipping_method_id) REFERENCES shipping_method(shipping_method_id) 
 );
 
-
--- The order_line table is created to store information about the items in each order, including order line ID, order ID, book ID, quantity, and price.
+/**
+The order_line table is created to store information
+about the items in each order,
+including order line ID, order ID,
+book ID, quantity, and price.
+**/
 CREATE TABLE order_line(
     order_line_id INT PRIMARY KEY AUTO_INCREMENT,
     order_id INT NOT NULL,
