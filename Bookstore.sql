@@ -78,7 +78,10 @@ CREATE TABLE order_line(
 );
 
 /**
-Shipping method table is created to store information about the shipping methods available for orders, including shipping method ID, name, cost, delivery days, and status.
+Shipping method table is created to store
+information about the shipping methods available
+for orders, including
+shipping_method_ID, name, cost, delivery days, and status.
 **/
 CREATE TABLE shipping_method(
     shipping_method_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -91,7 +94,7 @@ CREATE TABLE shipping_method(
 /**
 The order history table is created to store
 information about the history of orders,
-including order history ID, order ID, status ID, and date.
+including order_history_ID, order ID, status ID, and date.
 **/
 CREATE TABLE order_history(
     history_id INT PRIMARY KEY AUTO_INCREMENT,
