@@ -4,6 +4,27 @@ CREATE DATABASE BookstoreDB;
 -- This is for using the created database
 USE BookstoreDB;
 
+CREATE ROLE 'team_member';
+
+-- The 'team_member' role is created to manage access to the bookstoreDB database.
+-- The role will have all privileges on the bookstoreDB database, allowing users to perform any action within it.
+GRANT ALL PRIVILEGES ON bookstoreDB.* TO 'team_member';
+
+-- The 'team_member' role has been created with all privileges on the bookstoreDB database.
+CREATE USER 'phoebe'@'%' IDENTIFIED BY 'phoebe123';
+CREATE USER 'clive'@'%' IDENTIFIED BY 'clive123';
+
+-- Granting the 'team_member' role to the users so they can access the bookstoreDB database.
+GRANT 'team_member' TO 'phoebe'@'%';
+GRANT 'team_member' TO 'clive'@'%';
+
+-- Assigning the default role to the users so that they can use it without needing to set it each time they log in.
+SET DEFAULT ROLE 'team_member' TO 'phoebe'@'%';
+SET DEFAULT ROLE 'team_member' TO 'clive'@'%';
+
+
+FLUSH PRIVILEGES;
+
 -- This table is for the list of all books available in the bookstore.
 CREATE TABLE book (
     book_id INT PRIMARY KEY AUTO_INCREMENT,
