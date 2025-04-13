@@ -3,6 +3,48 @@ CREATE DATABASE BookstoreDB;
 
 -- This is for using the created database
 USE BookstoreDB;
+
+-- This table is for the list of all books available in the bookstore.
+CREATE TABLE book (
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    publication_year INT,
+    publisher_id INT,
+    language_id INT,
+    genre VARCHAR(100),
+    price DECIMAL(10, 2),
+    FOREIGN KEY (publisher_id) REFERENCES publisher(publisher_id),
+    FOREIGN KEY (language_id) REFERENCES book_language(language_id)
+);
+
+--A list of all authors.
+CREATE TABLE author (
+    author_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL
+);
+
+--A table to manage the many-to-many relationship between books and authors.
+CREATE TABLE book_author (
+    book_id INT,
+    author_id INT,
+    PRIMARY KEY (book_id, author_id),
+    FOREIGN KEY (book_id) REFERENCES book(book_id),
+    FOREIGN KEY (author_id) REFERENCES author(author_id)
+);
+
+--This is a list of the possible languages of books.
+CREATE TABLE book_language (
+    language_id INT PRIMARY KEY AUTO_INCREMENT,
+    language_name VARCHAR(50) UNIQUE NOT NULL
+);
+
+--A list of publishers for books.
+CREATE TABLE publisher (
+    publisher_id INT PRIMARY KEY AUTO_INCREMENT,
+    publisher_name VARCHAR(255) UNIQUE NOT NULL
+);
+
 -- Table to store all customer information
 CREATE TABLE customer (
     customer_id INT PRIMARY KEY AUTO_INCREMENT,

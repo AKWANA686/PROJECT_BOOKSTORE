@@ -9,11 +9,17 @@ The database consists of the following tables:
 
 | Table            | Description |
 |------------------|-------------|
+| `book`        | Stores books available in the store,their id, title, publication year. |
+| `book_author`        | Stores details about authors of the books|
+| `author`        | Stores details of all authors|
+| `book_language`        | contains details of the languages of books.|
+| `publisher`        | Stores details about publishers for books|
 | `customer`        | Stores customer details such as name, email, and phone number. |
 | `address_status`  | Stores possible statuses for an address (e.g., Current, Old). |
 | `country`         | Stores country names where addresses are located. |
 | `address`         | Stores full address details including street, city, postal code, and country. |
 | `customer_address`| A table that links customers to their multiple addresses and address statuses. |
+
 
 # Bookstore Database - Order Management Schema
 
