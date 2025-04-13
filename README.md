@@ -21,24 +21,11 @@ This document outlines the structure of the order-related tables used in the boo
 
 ## Tables Overview
 
-| Table Name        | Description |
-|-------------------|-------------|
-| `cust_orders`     | Stores
-information about customer orders, including order ID,
-customer ID, order date, shipping method ID,
-status ID, and total amount. |       
-| `order_line`      | The table is created to store information
-about the items in each order,
-including order line ID, order ID,
-book ID, quantity, and price. |
-| `shipping_method` | Stores
-information about the shipping methods available
-for orders, including
-shipping_method_ID, name, cost, delivery days, and status. |
-| `order_history`   | Stores
-information about the history of orders,
-including order_history_ID, order ID, status ID, and date. |
-| `order_status`    | Stores information
-about the status of orders,
-including status_ID and name. |
+| Table Name         | Description |
+|--------------------|-------------|
+| `cust_orders`      | Stores customer order details such as order date, customer, shipping method, status, and total amount. |
+| `order_line`       | Stores individual items included in each order including book, quantity, and price. |
+| `shipping_method`  | Stores shipping method options including cost, delivery time, and active status. |
+| `order_history`    | Stores the status history of orders including timestamps for each status update. |
+| `order_status`     | Stores the possible status values for customer orders. |
 
