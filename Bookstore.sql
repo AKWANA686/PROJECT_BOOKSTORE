@@ -1,4 +1,8 @@
+-- This SQL script creates a database schema for a bookstore system.
+CREATE DATABASE BookstoreDB;
 
+-- This is for using the created database
+USE BookstoreDB;
 -- Table to store all customer information
 CREATE TABLE customer (
     customer_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -106,7 +110,7 @@ CREATE TABLE order_history(
 );
 
 /**
-The order status table is
+The order_status table is
 created to store information
 about the status of orders,
 including status_ID and name.
