@@ -45,7 +45,6 @@ CREATE TABLE country (
     country_name VARCHAR(100) UNIQUE
 );
 
--- A table for knowing orders placed by a customer.
 /**
 The cust_orders table is created to store
 information about customer orders, including order ID,
